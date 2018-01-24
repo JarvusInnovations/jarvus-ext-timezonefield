@@ -1,0 +1,60 @@
+{
+    "name": "jarvus-ext-timezonefield",
+
+    "sencha": {
+        "namespace": "Jarvus.form.field",
+        "type": "code",
+        "toolkit": "classic",
+        "creator": "Nafis Bey",
+        "summary": "Timezone ComboBox Field",
+        "detailedDescription": "Timezone ComboBox Field",
+        "version": "0.0.1",
+        "compatVersion": "0.0.1",
+        "format": "1",
+
+
+        "slicer": {
+            "js": [
+                {
+                    "path": "${package.dir}/sass/example/custom.js",
+                    "isWidgetManifest": true
+                }
+            ]
+        },
+
+        "output": "${package.dir}/build",
+
+        "local": true,
+
+        "sass" : {
+            "namespace": "Jarvus.timezone.combo",
+
+            "etc": [
+                "${package.dir}/sass/etc/all.scss"
+             ],
+
+            "var": [
+                "${package.dir}/sass/var"
+            ],
+
+            "src": [
+                "${package.dir}/sass/src"
+            ]
+        },
+
+        "classpath": [
+            "${package.dir}/src"
+        ],
+
+        "overrides": [
+            "${package.dir}/overrides"
+        ],
+
+        "example": {
+            "path": [
+                "${package.dir}/examples"
+            ]
+        },
+        "requires": []
+    }
+}
