@@ -3,7 +3,6 @@ Ext.define('Jarvus.form.field.Timezone', {
     requires: [
         'Ext.form.field.ComboBox',
         'Ext.XTemplate'
-        // 'Jarvus.timezonefield.resources.Timezones'
     ],
     xtype: 'jarvus-timezonefield-combo',
 
@@ -11,6 +10,9 @@ Ext.define('Jarvus.form.field.Timezone', {
     valueField: 'id',
     forceSelection: true,
     autoLoadOnValue: true,
+    queryMode: 'local',
+    triggerAction: 'all',
+    anyMatch: true,
 
     store: Ext.create('Ext.data.JsonStore', {
         storeId: 'timezonesStore',
