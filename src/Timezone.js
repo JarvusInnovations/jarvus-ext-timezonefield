@@ -48,7 +48,7 @@ Ext.define('Jarvus.form.field.Timezone', {
     }),
 
     listConfig: {
-        tpl: Ext.create('Ext.XTemplate',
+        tpl: [
             '<ul><tpl for=".">',
                 '<tpl if="xindex == 1 || this.getGroupStr(parent[xindex - 2]) != this.getGroupStr(values)">',
                     '<li class="x-combo-list-group"><b>{[this.getGroupStr(values)]}</b></li>',
@@ -61,6 +61,6 @@ Ext.define('Jarvus.form.field.Timezone', {
                     return values.country
                 }
             }
-        )
+        ]
     }
 });
