@@ -1,10 +1,11 @@
-Ext.define('Jarvus.timezonefield.Combo', {
+Ext.define('Jarvus.timezone.Field', {
     extend: 'Ext.form.field.ComboBox',
+    xtype: 'jarvus-timezonefield-combo',
+
     requires: [
         'Ext.form.field.ComboBox',
-        'Ext.XTemplate'
+        'Jarvus.timezone.Store'
     ],
-    xtype: 'jarvus-timezonefield-combo',
 
     displayField: 'city',
     valueField: 'id',
@@ -14,38 +15,7 @@ Ext.define('Jarvus.timezonefield.Combo', {
     triggerAction: 'all',
     anyMatch: true,
 
-    store: {
-        type: 'json',
-        proxy: {
-            type: 'ajax',
-            url: Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'),
-            reader: {
-                type: 'json',
-                rootProperty: 'data',
-                transform: {
-                    fn: function (data) {
-                        var records = [],
-                            country, timezone;
-
-                        for (country in data) {
-                            if (data.hasOwnProperty(country)) {
-                                for (timezone in data[country]) {
-                                    if (data[country].hasOwnProperty(timezone)) {
-                                        records.push({
-                                            id: timezone,
-                                            country: country,
-                                            city: data[country][timezone]
-                                        });
-                                    }
-                                }
-                            }
-                        }
-                        return records;
-                    }
-                }
-            }
-        },
-    },
+    store: 'jarvus-timezone-store',
 
     listConfig: {
         tpl: [
