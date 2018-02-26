@@ -14,8 +14,10 @@ Ext.define('Jarvus.form.field.Timezone', {
     triggerAction: 'all',
     anyMatch: true,
 
-    store: Ext.create('Ext.data.JsonStore', {
+    store: {
+        type: 'json',
         storeId: 'timezonesStore',
+
         proxy: {
             type: 'ajax',
             url: Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'),
@@ -45,7 +47,7 @@ Ext.define('Jarvus.form.field.Timezone', {
                 }
             }
         },
-    }),
+    },
 
     listConfig: {
         tpl: [
