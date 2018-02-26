@@ -1,3 +1,3 @@
-# jarvus-timezone-combo/sass/var
+# jarvus-ext-timezonefield/sass/var
 
 This folder contains variable declaration files named by their component class.

@@ -1,3 +1,3 @@
-# jarvus-timezone-combo/licenses
+# jarvus-ext-timezonefield/licenses
 
 This folder contains the supported licenses for third-party use.

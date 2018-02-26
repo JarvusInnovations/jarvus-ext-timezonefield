@@ -1,4 +1,4 @@
-# jarvus-timezone-combo/sass/etc
+# jarvus-ext-timezonefield/sass/etc
 
-This folder contains miscellaneous SASS files. Unlike `"jarvus-timezone-combo/sass/etc"`, these files
+This folder contains miscellaneous SASS files. Unlike `"jarvus-ext-timezonefield/sass/etc"`, these files
 need to be used explicitly.
