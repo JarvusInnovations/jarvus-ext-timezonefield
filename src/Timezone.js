@@ -1,4 +1,4 @@
-Ext.define('Jarvus.form.field.Timezone', {
+Ext.define('Jarvus.timezonefield.Combo', {
     extend: 'Ext.form.field.ComboBox',
     requires: [
         'Ext.form.field.ComboBox',
