@@ -16,8 +16,6 @@ Ext.define('Jarvus.form.field.Timezone', {
 
     store: {
         type: 'json',
-        storeId: 'timezonesStore',
-
         proxy: {
             type: 'ajax',
             url: Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'),
