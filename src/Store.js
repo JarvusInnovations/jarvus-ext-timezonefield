@@ -1,6 +1,7 @@
 Ext.define('Jarvus.timezone.Store', {
     extend: 'Ext.data.Store',
 
+    singleton: true,
     storeId: 'jarvus-timezone-store',
     type: 'json',
     proxy: {
