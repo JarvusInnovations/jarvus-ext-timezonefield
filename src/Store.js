@@ -1,7 +1,8 @@
 Ext.define('Jarvus.timezone.Store', {
     extend: 'Ext.data.Store',
-
     singleton: true,
+
+
     storeId: 'jarvus-timezone-store',
     type: 'json',
     proxy: {
@@ -32,5 +33,11 @@ Ext.define('Jarvus.timezone.Store', {
                 }
             }
         }
+    },
+
+
+    constructor: function() {
+        this.callParent(arguments);
+        this.getProxy().setUrl(Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'));
     }
 });
