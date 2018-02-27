@@ -37,6 +37,10 @@ Ext.define('Jarvus.timezone.Store', {
 
     constructor: function() {
         this.callParent(arguments);
-        this.getProxy().setUrl(Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'));
+
+        // Temporary fix until getResroucesPath issue is resolved
+        // @todo remove timezones.json from ontrayap.com
+        this.getProxy().setUrl(Commerce.API.getHostUrl() + '/timezones.json');
+        // Ext.getResourcePath('static/timezones.json', null, 'jarvus-ext-timezonefield'));
     }
 });
