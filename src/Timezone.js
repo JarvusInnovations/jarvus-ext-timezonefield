@@ -15,7 +15,40 @@ Ext.define('Jarvus.timezone.Field', {
     triggerAction: 'all',
     anyMatch: true,
 
-    store: 'jarvus-timezone-store',
+    store: {
+        type: 'json',
+        proxy: {
+            type: 'ajax',
+
+            // @todo replace with static file reference
+            url: Commerce.API.getHostUrl() + '/timezones.json',
+            reader: {
+                type: 'json',
+                rootProperty: 'data',
+                transform: {
+                    fn: function (data) {
+                        var records = [],
+                            country, timezone;
+
+                        for (country in data) {
+                            if (data.hasOwnProperty(country)) {
+                                for (timezone in data[country]) {
+                                    if (data[country].hasOwnProperty(timezone)) {
+                                        records.push({
+                                            id: timezone,
+                                            country: country,
+                                            city: data[country][timezone]
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                        return records;
+                    }
+                }
+            }
+        }
+    },
 
     listConfig: {
         tpl: [
